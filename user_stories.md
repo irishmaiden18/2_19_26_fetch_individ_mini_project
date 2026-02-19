@@ -10,7 +10,7 @@
 
 - at the bottom of the "Random Dog Facts" section will be a "Get New Dog Facts" button that generates new dog facts pulled from the API
 
-- on load, below "Random Dog Facts", "Featured Dog Breed" will display data on a randomly generated dog breed from the list at the API. Data will include: breed name, description, life span, male weight, female weight, & whether the dog is hypoallergenic
+- DONE -- on load, below "Random Dog Facts", "Featured Dog Breed" will display data on a randomly generated dog breed from the list at the API. Data will include: breed name, description, life span, male weight, female weight, & whether the dog is hypoallergenic
 
 - on load, below "Featured Dog Breed", will be the section titled "Change Dog Breed" followed by a list of buttons for the other possible dog breeds, pulled from the API
 
