@@ -13,6 +13,7 @@ const breedFemaleWeight = document.querySelector("#breed-female-weight")
 const breedHypoallergenic = document.querySelector("#breed-hypoallergenic")
 
 const changeDogBreedArea = document.querySelector("#change-dog-breed-area")
+const dogBreedSelect = document.querySelector("#dog-breed-select")
 
 //Variables
 let allDogBreeds = []
@@ -22,9 +23,16 @@ let featuredDogBreed
 
 //initialize the page
 async function initialize() {
+    //get the array of all dog breeds
     await getAllDogBreeds()
+    //select a random dog breed to start with
     featuredDogBreed = getRandomDogBreed(allDogBreeds)
+    //populate the featured breed section with the randomly selected breed
     populateFeaturedBreedSection(featuredDogBreed)
+    //create an option for the breed select menu for each possible dog breed
+    allDogBreeds.forEach(breed => createDogBreedOption(breed))
+    //add event listener to handle selecting a new dog breed
+    dogBreedSelect.addEventListener("change", handleDogBreedSelection)
 }
 
 //get an array of all dog breeds in the API
@@ -33,13 +41,13 @@ async function getAllDogBreeds() {
     const breedObj = await response.json()
     // console.log(breedObj)
     allDogBreeds = breedObj.data
-    console.log(allDogBreeds)
+    // console.log(allDogBreeds)
 }
 
 //get a random dog breed
 function getRandomDogBreed(array) {
     const randomIndex = Math.floor(Math.random() * array.length)
-    console.log(array[randomIndex])
+    // console.log(array[randomIndex])
     return array[randomIndex]
 }
 
@@ -57,6 +65,21 @@ function populateFeaturedBreedSection(dogBreedObj) {
     } else{
         breedHypoallergenic.textContent = `${breedAttributes.name}s are NOT hypoallergenic`
     }
+}
+
+//create option for select menu to represent a dog breed
+function createDogBreedOption(dogBreedObj) {
+    const newOption = document.createElement("option")
+    newOption.value = dogBreedObj.attributes.name
+    newOption.textContent = dogBreedObj.attributes.name
+    dogBreedSelect.append(newOption)
+}
+
+//handle user selecting a new dog breed
+function handleDogBreedSelection(event) {
+    const dogBreedName = event.target.value
+    featuredDogBreed = allDogBreeds.find(dogBreedObj => dogBreedObj.attributes.name == dogBreedName)
+    populateFeaturedBreedSection(featuredDogBreed)
 }
 
 

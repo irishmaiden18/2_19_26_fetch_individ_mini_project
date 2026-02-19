@@ -12,9 +12,9 @@
 
 - DONE -- on load, below "Random Dog Facts", "Featured Dog Breed" will display data on a randomly generated dog breed from the list at the API. Data will include: breed name, description, life span, male weight, female weight, & whether the dog is hypoallergenic
 
-- on load, below "Featured Dog Breed", will be the section titled "Change Dog Breed" followed by a list of buttons for the other possible dog breeds, pulled from the API
+- DONE -- on load, below "Featured Dog Breed", will be the section titled "Change Dog Breed" followed by a select menu for the other possible dog breeds, pulled from the API
 
-- when user clicks the "Change Dog Breed" button, the featured breed will change to the new breed. All associated data in the featured section will also change to the new breed
+- DONE -- when user makes a selection in the dog breed menu, the featured breed will change to the new breed. All associated data in the featured section will also change to the new breed
 
 - while the data is loading, either on page load or after a button was clicked, a loading... indication will show until all data is filled so user knows search is working
 
