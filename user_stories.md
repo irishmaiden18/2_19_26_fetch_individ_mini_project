@@ -16,7 +16,7 @@
 
 - DONE -- when user makes a selection in the dog breed menu, the featured breed will change to the new breed. All associated data in the featured section will also change to the new breed
 
-- while the data is loading, either on page load or after a button was clicked, a loading... indication will show until all data is filled so user knows search is working
+- DONE -- while the data is loading, either on page load or after a button was clicked, a loading... indication will show until all data is filled so user knows search is working
 
 ## Bonus
 

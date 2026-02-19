@@ -2,6 +2,8 @@
 const DOG_TEXT_URL = "https://dogapi.dog/api/v2/"
 
 //DOM Elements
+const loadingIndicator = document.querySelector("#loading-indicator")
+
 const randomDogFactsList = document.querySelector("#random-dog-facts")
 const getNewDogFactsButton = document.querySelector("#get-new-dog-facts")
 
@@ -23,6 +25,8 @@ let featuredDogBreed
 
 //initialize the page
 async function initialize() {
+    //sets loadingIndicator to true while we get our data
+    setLoading(true)
     //get the array of all dog breeds
     await getAllDogBreeds()
     //select a random dog breed to start with
@@ -33,6 +37,8 @@ async function initialize() {
     allDogBreeds.forEach(breed => createDogBreedOption(breed))
     //add event listener to handle selecting a new dog breed
     dogBreedSelect.addEventListener("change", handleDogBreedSelection)
+    //sets loadingIndcator to false now that we have our data
+    setLoading(false)
 }
 
 //get an array of all dog breeds in the API
@@ -80,6 +86,15 @@ function handleDogBreedSelection(event) {
     const dogBreedName = event.target.value
     featuredDogBreed = allDogBreeds.find(dogBreedObj => dogBreedObj.attributes.name == dogBreedName)
     populateFeaturedBreedSection(featuredDogBreed)
+}
+
+//sets display of the loading indicator depending on if it's loading
+function setLoading(loading) {
+    if (loading) {
+        loadingIndicator.style.display = "block"
+    } else {
+        loadingIndicator.style.display = "none"
+    }
 }
 
 
