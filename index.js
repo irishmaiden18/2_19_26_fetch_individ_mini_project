@@ -4,7 +4,7 @@ const DOG_TEXT_URL = "https://dogapi.dog/api/v2/"
 //DOM Elements
 const loadingIndicator = document.querySelector("#loading-indicator")
 
-const randomDogFactsList = document.querySelector("#random-dog-facts")
+const dogFactsList = document.querySelector("#random-dog-facts")
 const getNewDogFactsButton = document.querySelector("#get-new-dog-facts")
 
 const breedName = document.querySelector("#breed-name")
@@ -20,6 +20,7 @@ const dogBreedSelect = document.querySelector("#dog-breed-select")
 //Variables
 let allDogBreeds = []
 let featuredDogBreed
+let dogFacts = []
 
 //Functions
 
@@ -27,6 +28,15 @@ let featuredDogBreed
 async function initialize() {
     //sets loadingIndicator to true while we get our data
     setLoading(true)
+    
+    //get the array of 5 doc facts
+    await getDogFacts()
+    //add event listener to clear the fact area and replace them with new dog facts
+    getNewDogFactsButton.addEventListener("click", () => {
+        clearDogFacts()
+        getDogFacts()
+    })
+    
     //get the array of all dog breeds
     await getAllDogBreeds()
     //select a random dog breed to start with
@@ -39,6 +49,30 @@ async function initialize() {
     dogBreedSelect.addEventListener("change", handleDogBreedSelection)
     //sets loadingIndcator to false now that we have our data
     setLoading(false)
+}
+
+//get an array of 5 dog facts from the API
+async function getDogFacts() {
+    const response = await fetch(DOG_TEXT_URL + "facts?limit=5")
+    const factObj = await response.json()
+    // console.log(factObj)
+    dogFacts = factObj.data
+    // console.log(dogFacts)
+    //populate the list of dog facts with the facts from the dogFacts array
+    dogFacts.forEach(fact => createDogFact(fact))
+}
+
+//clear the dog facts list
+function clearDogFacts() {
+    const toDelete = document.querySelectorAll("#random-dog-facts li")
+    toDelete.forEach((li) => li.remove())
+}
+
+//create a dog fact
+function createDogFact(fact) {
+    const newLi = document.createElement("li")
+    newLi.textContent = fact.attributes.body
+    dogFactsList.append(newLi)
 }
 
 //get an array of all dog breeds in the API

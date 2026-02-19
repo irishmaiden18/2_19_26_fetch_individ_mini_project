@@ -6,9 +6,9 @@
 
 - DONE -- on load user will see three sections, "Random Dog Facts", "Featured Dog Breed", "Change Dog Breed"
 
-- on load, at top  "Random Dog Facts" will display an unordered list of random dog facts fetched from the API
+- DONE -- on load, at top  "Random Dog Facts" will display an unordered list of random dog facts fetched from the API
 
-- at the bottom of the "Random Dog Facts" section will be a "Get New Dog Facts" button that generates new dog facts pulled from the API
+- DONE -- at the bottom of the "Random Dog Facts" section will be a "Get New Dog Facts" button that generates new dog facts pulled from the API
 
 - DONE -- on load, below "Random Dog Facts", "Featured Dog Breed" will display data on a randomly generated dog breed from the list at the API. Data will include: breed name, description, life span, male weight, female weight, & whether the dog is hypoallergenic
 
