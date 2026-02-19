@@ -8,7 +8,7 @@
 
 ## Getting Started
 
-1. Find your API or build your data with a .json file. If looking for an API, the site I use is this one. Please vet your APIs before committing to them by reading documentation and testing them. Additionally, don't choose an API with an API key.
+1. Find your API or build your data with a .json file. If looking for an API, the site I use is this one (https://github.com/public-apis/public-apis?tab=readme-ov-file). Please vet your APIs before committing to them by reading documentation and testing them. Additionally, don't choose an API with an API key.
 
 2. Come up with a concept and write user stories for it (a user will be able to...)
 
