@@ -20,7 +20,7 @@
 
 ## Bonus
 
-- on load, accross the top of the page, before the heading, a number of random dog images will display side to side, the same size, depending on the screen size and pulled from a separate API
+- DONE -- on load, accross the top of the page, before the heading, a number of random dog images will display side to side, the same size, depending on the screen size and pulled from a separate API
 
 # API
 

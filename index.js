@@ -1,8 +1,11 @@
-//API URL
+//////////////////////////////////////////////////////////////API URL
 const DOG_TEXT_URL = "https://dogapi.dog/api/v2/"
+const DOG_PIC_URL = "https://dog.ceo/api/breeds/image/random/"
 
-//DOM Elements
+///////////////////////////////////////////////////////////DOM Elements
 const loadingIndicator = document.querySelector("#loading-indicator")
+
+const randomDogPicsArea = document.querySelector("#random-dog-pics-area")
 
 const dogFactsList = document.querySelector("#random-dog-facts")
 const getNewDogFactsButton = document.querySelector("#get-new-dog-facts")
@@ -17,18 +20,24 @@ const breedHypoallergenic = document.querySelector("#breed-hypoallergenic")
 const changeDogBreedArea = document.querySelector("#change-dog-breed-area")
 const dogBreedSelect = document.querySelector("#dog-breed-select")
 
-//Variables
+/////////////////////////////////////////////////////////////////Variables
 let allDogBreeds = []
 let featuredDogBreed
 let dogFacts = []
+let dogPics = []
 
-//Functions
+////////////////////////////////////////////////////////////////Functions
+
+//Initialize Function
 
 //initialize the page
 async function initialize() {
     //sets loadingIndicator to true while we get our data
     setLoading(true)
     
+    //get dog pics and display along top of screen
+    await getDogPics()
+
     //get the array of 5 doc facts
     await getDogFacts()
     //add event listener to clear the fact area and replace them with new dog facts
@@ -51,6 +60,31 @@ async function initialize() {
     setLoading(false)
 }
 
+//Dog Pics
+
+//get an array of 10 random dog images from the API
+async function getDogPics() {
+    const response = await fetch (DOG_PIC_URL + 10)
+    const picObj = await response.json()
+    // console.log(picObj)
+    dogPics = picObj.message
+    // console.log(dogPics)
+
+    //create an image tag for each pic in the dogPics array
+    dogPics.forEach(picAddress => createDogPic(picAddress))
+}
+
+//create a dog img
+function createDogPic(picAddress) {
+    const newImg = document.createElement("img")
+    newImg.alt = "dog pic"
+    newImg.src = picAddress
+    newImg.style.height = "100px"
+    randomDogPicsArea.append(newImg)
+}
+
+//Dog Facts
+
 //get an array of 5 dog facts from the API
 async function getDogFacts() {
     const response = await fetch(DOG_TEXT_URL + "facts?limit=5")
@@ -58,6 +92,7 @@ async function getDogFacts() {
     // console.log(factObj)
     dogFacts = factObj.data
     // console.log(dogFacts)
+
     //populate the list of dog facts with the facts from the dogFacts array
     dogFacts.forEach(fact => createDogFact(fact))
 }
@@ -74,6 +109,8 @@ function createDogFact(fact) {
     newLi.textContent = fact.attributes.body
     dogFactsList.append(newLi)
 }
+
+//Dog Breed
 
 //get an array of all dog breeds in the API
 async function getAllDogBreeds() {
