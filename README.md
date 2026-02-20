@@ -4,7 +4,7 @@ Link to site: https://irishmaiden18.github.io/All-About-Dogs-Fetch-Mini-Project/
 
 ## API's Used
 
-- mostly, site will use data from API https://dogapi.dog/
+- text will come from API https://dogapi.dog/
 
 - images will come from https://dog.ceo/api/breeds/image/random
 
