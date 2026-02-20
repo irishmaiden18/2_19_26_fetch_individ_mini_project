@@ -1,6 +1,9 @@
 # JS Mini Project -- Dog Site
 
-Link to site: <a href="https://irishmaiden18.github.io/All-About-Dogs-Fetch-Mini-Project/" target="_blank">Link</a>
+Link to site: [Link Text](https://irishmaiden18.github.io/All-About-Dogs-Fetch-Mini-Project/){:target="_blank"}
+
+
+
 
 ## API's Used
 
