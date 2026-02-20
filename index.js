@@ -86,7 +86,7 @@ function createDogPic(picAddress) {
         newImg.style.height = "100px"
         newImg.style.width = "20%"
         newImg.style.objectFit = "cover"
-    } else if (window.innerWidth <= 1220) {
+    } else if ((window.innerWidth > 800) && (window.innerWidth <= 1220)) {
         newImg.style.height = "100px"
         newImg.style.width = "15%"
         newImg.style.objectFit = "cover"
