@@ -1,0 +1,30 @@
+#random-dog-pics-area {
+    text-align: center;
+}
+
+#wrapper {
+    padding: 5%;
+}
+
+#loading-indicator {
+    text-align: center;
+}
+
+h1 {
+    text-align:center;
+}
+
+#random-dog-facts {
+    padding-left: 8%;
+}
+
+.label {
+    font-weight: bold;
+}
+
+#dog-breed-select {
+    margin-top: 2%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
