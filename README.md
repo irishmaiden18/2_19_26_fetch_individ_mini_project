@@ -1,5 +1,7 @@
 # JS Mini Project -- Dog Site
 
+Created user stories for a dog website. Built a responsive site using HTML, CSS & JavaScript based on those stories which gathers and displays data from multiple APIs.
+
 Link to site: https://irishmaiden18.github.io/All-About-Dogs-Fetch-Mini-Project/
 
 ## API's Used
