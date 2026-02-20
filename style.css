@@ -1,9 +1,14 @@
+body {
+    background-color: #DCEBFA;
+}
+
 #random-dog-pics-area {
     text-align: center;
 }
 
 #wrapper {
     padding: 5%;
+    max-width: 700px;
 }
 
 #loading-indicator {
@@ -12,19 +17,124 @@
 
 h1 {
     text-align:center;
+    color: #0096FF;
+}
+
+#random-dog-facts-area {
+    text-align: center;
+    border-bottom: solid black 1px;
+    padding-bottom: 10%;
+}
+
+h2 {
+    color: #0437F2;
+    text-align: left;
 }
 
 #random-dog-facts {
     padding-left: 8%;
+    text-align: left;
+}
+
+#get-new-dog-facts {
+    background-color: #6791db;
+    border-radius: 15px;
+    padding: 2%;
+    color: white;
+    border-color: #6791db;
+}
+
+#featured-dog-breed-area h2 {
+    padding-top: 4%;
+}
+
+h3 {
+    color: #2263d6;
+    text-transform: uppercase;
 }
 
 .label {
     font-weight: bold;
+    color: #6495ED;
+}
+
+#change-dog-breed-area {
+    padding-top: 0.5%;
+}
+
+#change-breed {
+    text-align: center;
+}
+
+#change-breed span {
+    color: #0437F2;
+    font-size: 18px;
 }
 
 #dog-breed-select {
     margin-top: 2%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    border-radius: 15px;
+    padding: 2%;
+    background-color: #6791db;
+    color: white;
+}
+
+@media (min-width: 501px) {
+    #wrapper {
+        max-width: 700px;
+        margin: auto;
+        border: solid black 2px;
+        border-radius: 20px;
+        padding-top: 1.5%;
+    }
+
+    h1 {
+        padding-bottom: 2.5%;
+    }
+
+    #random-dog-facts-area {
+        border-bottom: solid black 2px;
+        padding-bottom: 8%;
+    }
+
+    #get-new-dog-facts {
+        padding: 10px 15px;
+    }
+
+    #featured-dog-breed-area h2 {
+        padding-top: 2%;
+    }
+
+    #change-dog-breed-area {
+        padding-top: 3%;
+    }
+
+    #dog-breed-select {
+        margin: auto;
+    }
+
+}
+
+@media (min-width: 600px) {
+    #random-dog-facts-area {
+        padding-bottom: 5%;
+    }
+
+    #change-dog-breed-area {
+        padding-top: 5%;
+    }
+
+    #change-breed span {
+        font-size: 20px;
+    }
+
+    #dog-breed-select {
+        border-radius: 18px;
+    }
+}
+
+@media (min-width: 1130px) {
+    #wrapper {
+        padding: 4%;
+    }
 }
