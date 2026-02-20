@@ -38,12 +38,17 @@ async function initialize() {
     
     //get dog pics and display along top of screen
     await getDogPics()
+    window.addEventListener("resize", () => {
+        clearDogPics()
+        createDogPics(dogPics)
+    })
 
     //get the array of 5 doc facts
     await getDogFacts()
     //add event listener to clear the fact area and replace them with new dog facts
     getNewDogFactsButton.addEventListener("click", () => {
         clearDogFacts()
+        console.log("got called")
         getDogFacts()
     })
     
@@ -72,7 +77,12 @@ async function getDogPics() {
     // console.log(dogPics)
 
     //create an image tag for each pic in the dogPics array
-    dogPics.forEach(picAddress => createDogPic(picAddress))
+    createDogPics(dogPics)
+}
+
+//create dog images from array
+function createDogPics(array) {
+    array.forEach(picAddress => createDogPic(picAddress))
 }
 
 //create a dog img
@@ -99,6 +109,13 @@ function createDogPic(picAddress) {
     }
 
     randomDogPicsArea.append(newImg)
+}
+
+//clear dog pics
+function clearDogPics() {
+    const toDelete = document.querySelectorAll("#random-dog-pics-area img")
+    toDelete.forEach((img) => img.remove())
+    dogPicsLoaded = 0
 }
 
 //Dog Facts
