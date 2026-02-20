@@ -90,20 +90,16 @@ function createDogPic(picAddress) {
     const newImg = document.createElement("img")
     newImg.alt = "dog pic"
     newImg.src = picAddress
+    newImg.style.height = "100px"
+    newImg.style.objectFit = "cover"
     dogPicsLoaded +=1
 
     if ((window.innerWidth <= 800) && (dogPicsLoaded <= 10)) {
-        newImg.style.height = "100px"
         newImg.style.width = "20%"
-        newImg.style.objectFit = "cover"
     } else if ((window.innerWidth > 800) && (window.innerWidth <= 1220)) {
-        newImg.style.height = "100px"
         newImg.style.width = "15%"
-        newImg.style.objectFit = "cover"
     } else if (dogPicsLoaded <= 10) {
-        newImg.style.height = "100px"
         newImg.style.width = "10%"
-        newImg.style.objectFit = "cover"
     } else {
         return
     }
