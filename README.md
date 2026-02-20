@@ -4,4 +4,4 @@ Link to site: link_to_live_site
 
 ![desktop website view](https://github.com/irishmaiden18/2_19_26_fetch_individ_mini_project/blob/main/all_about_dogs_desktop.jpg)
 
-![desktop website view](mobile_image_link)
+![desktop website view](https://github.com/irishmaiden18/2_19_26_fetch_individ_mini_project/blob/main/all_about_dogs_mobile.jpg)
