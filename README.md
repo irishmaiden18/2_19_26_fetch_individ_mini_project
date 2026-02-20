@@ -1,9 +1,6 @@
 # JS Mini Project -- Dog Site
 
-Link to site: 
-
-<a href="https://irishmaiden18.github.io/All-About-Dogs-Fetch-Mini-Project/" target="_blank" rel="noopener noreferrer">Link Text</a>
-
+Link to site: https://irishmaiden18.github.io/All-About-Dogs-Fetch-Mini-Project/
 
 ## API's Used
 
